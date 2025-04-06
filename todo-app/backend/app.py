@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "https://ubiquitous-zebra-g4qvpqpwr9gv39v6p-5173.app.github.dev"}})
+CORS(app, resources={r"/*": {"origins": "https://urban-space-sniffle-5gq79q9prwq5c4rwq-5173.app.github.dev"}})
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///tasks.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False

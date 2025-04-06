@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import './App.css'
 
-const API_URL = "https://ubiquitous-zebra-g4qvpqpwr9gv39v6p-5000.app.github.dev/tasks";
+const API_URL = "https://urban-space-sniffle-5gq79q9prwq5c4rwq-5000.app.github.dev/tasks";
 
 type Task = {
   id: number;
