@@ -1,3 +1,5 @@
+
+
 /* Header */
 .app-header {
   background-color: #6a0dad;
@@ -16,8 +18,9 @@
 .main-container {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
+  align-items: flex-start;
+  margin: 1.2rem 1rem 0 1rem;
+  gap: 2rem;
 }
 
 /* Add Task Form Section */

@@ -73,23 +73,25 @@ function App() {
       <main className="main-container">
 
         {/* Add Task Form */}
-        <section className="add-task-form">
-          <h2>Add New Task</h2>
-          <div className="form-fields">
-            <select title="Category" value={category} onChange={(e) => setCategory(e.target.value)}>
-              <option value="">Select Category</option>
-              <option value="Personal">Personal</option>
-              <option value="Work">Work</option>
-              <option value="Shopping">Shopping</option>
-              <option value="Others">Others</option>
-            </select>
-            <select title="Priority" value={priority} onChange={(e) => setPriority(Number(e.target.value))}>
-              <option value={1}>Low</option>
-              <option value={2}>Medium</option>
-              <option value={3}>High</option>
-            </select>
-            <input title="dueDate" type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
-            <input value={newTask} onChange={(e) => setNewTask(e.target.value)} placeholder="Enter task..." required />
+        <section className="container insert">
+          <div className="content">
+            <h2>Add New Task</h2>
+            <div className="form-fields">
+              <select title="Category" value={category} onChange={(e) => setCategory(e.target.value)}>
+                <option value="">Select Category</option>
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Others">Others</option>
+              </select>
+              <select title="Priority" value={priority} onChange={(e) => setPriority(Number(e.target.value))}>
+                <option value={1}>Low</option>
+                <option value={2}>Medium</option>
+                <option value={3}>High</option>
+              </select>
+              <input title="dueDate" type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
+              <input value={newTask} onChange={(e) => setNewTask(e.target.value)} placeholder="Enter task..." required />
+            </div>
             <button type="submit" onClick={addTask}>
               Add Task
             </button>
@@ -97,36 +99,26 @@ function App() {
         </section>
 
         {/* Task List */}
-        <section className="task-list">
-          <h2>Task List</h2>
-          <ul>
-            {tasks.map((task) => (
-              <li key={task.id} className={`task-item priority-${task.priority}`}>
-                <span className={task.completed ? "completed" : ""}>{task.description}</span>
-                <div className="task-actions">
-                  <button type="submit" onClick={() => toggleTask(task.id)}>
-                    {task.completed ? "Undo" : "Complete"}
-                  </button>
-                  <button onClick={() => deleteTask(task.id)}>Delete</button>
-                </div>
-              </li>
-            ))}
-          </ul>
+        <section className="container list">
+          <div className="content">
+            <h2>Task List</h2>
+            <ul>
+              {tasks.map((task) => (
+                <li key={task.id} className={`task-item priority-${task.priority}`}>
+                  <span className={task.completed ? "completed" : ""}>{task.description}</span>
+                  <div className="task-actions">
+                    <button type="submit" onClick={() => toggleTask(task.id)}>
+                      {task.completed ? "Undo" : "Complete"}
+                    </button>
+                    <button type="button" onClick={() => deleteTask(task.id)}>Delete</button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </section>
 
       </main>
-
-      
-      {/* <button type="button" onClick={addTask}>Add</button> */}
-      {/* <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            {task.description} {task.completed ? "✅" : "❌"}
-            <button onClick={() => toggleTask(task.id)}>Toggle</button>
-            <button onClick={() => deleteTask(task.id)}>Delete</button>
-          </li>
-        ))}
-      </ul> */}
     </>
   );
 }
